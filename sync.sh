@@ -13,7 +13,7 @@ for file in $(find ~/workspace -maxdepth 2 -name shell.nix -type file); do
     cp ${file} ${dir}
 
     pushd $(dirname ${file})
-    mv shell.nix{,.back}
+    rm shell.nix
     ln -s /Users/rubenk/.config/nix-shells/${dir}/shell.nix
     popd
 done
