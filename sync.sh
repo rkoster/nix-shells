@@ -2,7 +2,7 @@
 
 for file in $(find ~/workspace -maxdepth 2 -name shell.nix -type file); do
     pushd $(dirname ${file})
-    dir=$(git remote -v | xargs | grep fetch | cut -d' ' -f2 | cut -d'/' -f3-)
+    dir=$(git remote -v | xargs | grep fetch | cut -d' ' -f2 | cut -d'/' -f3- | sed 's/.git//g')
     popd
 
     if [ -z "${dir}" ]; then
