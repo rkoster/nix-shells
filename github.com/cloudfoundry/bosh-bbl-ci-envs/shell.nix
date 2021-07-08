@@ -6,5 +6,6 @@ pkgs.mkShell {
     pkgs.bosh-bootloader
     pkgs.credhub
     pkgs.fly72
+    pkgs.awscli
   ];
 }
